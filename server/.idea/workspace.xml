@@ -7,66 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2927a1d6-a2c3-482e-a609-a1edf5d71db5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/client/jobs/SkierWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/constant/PhraseEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/constant/message/APIMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/statistic/Record.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/statistic/RecordContainer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/statistic/StatsComputer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/statistic/StatsThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/statistic/StatusListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/statistic/graph/RecordDataGrapher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/entity/Skier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/util/GsonUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/client/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/client/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/client/Executor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/client/ExecutorContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/client/ExecutorContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/client/jobs/Counter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/client/jobs/Counter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/client/jobs/SkierThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/client/jobs/SkierThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/client/jobs/SkierWorkder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/constant/ArgsDefaultValue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/constant/ArgsDefaultValue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/constant/ArgsName.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/constant/ArgsName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/constant/message/ArgsMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/constant/message/ArgsMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/exception/ArgsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/exception/ArgsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/util/HttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/util/HttpUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/util/StringUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/validators/AddressValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/validators/AddressValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/validators/ArgsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/validators/ArgsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/validators/NumLiftsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/validators/NumLiftsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/validators/NumRunsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/validators/NumRunsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/validators/NumSkiersValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/validators/NumSkiersValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/statistic/StatsComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/statistic/StatsComputer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/validators/NumThreadsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/validators/NumThreadsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/validators/RangeArgsValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/validators/RangeArgsValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/META-INF/xiaohan_hw_1.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/args/Args.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/args/NumLifts.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/args/NumRuns.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/args/NumSkiers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/args/NumThreads.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/args/RangeArgs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/client/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/client/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/client/ExecutionContext.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/message/ArgsMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/util/HttpUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/util/HttpUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MyServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MyServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/MyServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MyServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/server.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/server.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/server/WEB-INF/classes/controller/MyServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/server/WEB-INF/classes/controller/MyServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/server/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/server/WEB-INF/web.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -428,12 +371,12 @@
       <option name="presentableId" value="Default" />
       <updated>1569988922949</updated>
       <workItem from="1569988925676" duration="8730000" />
-      <workItem from="1570418646456" duration="1970000" />
+      <workItem from="1570418646456" duration="2519000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10700000" />
+    <option name="totallyTimeSpent" value="11249000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="960" extended-state="0" />

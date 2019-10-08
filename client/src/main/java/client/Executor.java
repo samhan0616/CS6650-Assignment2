@@ -36,6 +36,13 @@ public class Executor {
   public static final int PHRASE2_THREAD_FACTOR = 1;
   public static final int PHRASE3_THREAD_FACTOR = 4;
 
+  public static final int PHRASE1_TIME_FROM = 1;
+  public static final int PHRASE1_TIME_TO = 90;
+  public static final int PHRASE2_TIME_FROM = 91;
+  public static final int PHRASE2_TIME_TO = 360;
+  public static final int PHRASE3_TIME_FROM = 361;
+  public static final int PHRASE3_TIME_TO = 420;
+
   private HashMap<String, ArgsValidator> validators;
 
   private Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -56,13 +63,13 @@ public class Executor {
     recording();
     // phrase 1
     doPhrase(PhraseEnum.phrase1, null,
-            PhraseLock.phrase2Lock, PHRASE1_RUNNER_FACTOR, PHRASE1_THREAD_FACTOR, 1, 90);
+            PhraseLock.phrase2Lock, PHRASE1_RUNNER_FACTOR, PHRASE1_THREAD_FACTOR, PHRASE1_TIME_FROM, PHRASE1_TIME_TO);
     //phrase 2
     doPhrase(PhraseEnum.phrase2, PhraseLock.phrase2Lock,
-            PhraseLock.phrase3Lock, PHRASE2_RUNNER_FACTOR, PHRASE2_THREAD_FACTOR, 91, 360);
+            PhraseLock.phrase3Lock, PHRASE2_RUNNER_FACTOR, PHRASE2_THREAD_FACTOR, PHRASE2_TIME_FROM, PHRASE2_TIME_TO);
     //phrase 3
     doPhrase(PhraseEnum.phrase3, PhraseLock.phrase3Lock,
-            null, PHRASE3_RUNNER_FACTOR, PHRASE3_THREAD_FACTOR, 361, 420);
+            null, PHRASE3_RUNNER_FACTOR, PHRASE3_THREAD_FACTOR, PHRASE3_TIME_FROM,  PHRASE3_TIME_TO);
   }
 
   private void recording() {

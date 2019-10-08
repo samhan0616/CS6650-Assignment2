@@ -28,7 +28,7 @@ public class StatsComputer {
   private int totalRequestNumber;
   private RecordDataGrapher grapher;
 
-  public static long end = 0;
+  static long end = 0;
 
   private PriorityQueue<Long> percentilePQ;
   private PriorityQueue<Long> medianPQSmall;
@@ -67,7 +67,7 @@ public class StatsComputer {
     logger.info("Computing completed, all tasks finished");
   }
 
-  public void update(Record record) {
+  void update(Record record) {
     updateTotal(record.getLatency());
     updatePercentile(record.getLatency());
     updateMeidan(record.getLatency());
