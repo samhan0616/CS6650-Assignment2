@@ -5,6 +5,6 @@ package constant;
  * @version 1.0
  * @since jdk 1.8
  */
-public enum PhraseEnum {
-  phrase1, phrase2, phrase3;
+public enum PhaseEnum {
+  phase1, phase2, phase3;
 }

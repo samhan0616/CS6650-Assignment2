@@ -1,7 +1,7 @@
 package client.jobs;
 
 import com.mashape.unirest.http.HttpMethod;
-import constant.PhraseEnum;
+import constant.PhaseEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import statistic.Record;
@@ -19,24 +19,24 @@ public class Counter {
   private final Object lock;
   private int max;
   private int current;
-  private PhraseEnum phraseEnum;
+  private PhaseEnum phaseEnum;
 
-  public Counter(PhraseEnum phraseEnum, Object lock, int max) {
-    this.phraseEnum = phraseEnum;
+  public Counter(PhaseEnum phaseEnum, Object lock, int max) {
+    this.phaseEnum = phaseEnum;
     this.lock = lock;
     this.max = max;
-    logger.info(phraseEnum.toString() + " start! Max requests " + max);
+    logger.info(phaseEnum.toString() + " start! Max requests " + max);
   }
 
   public synchronized void update(int startTime, HttpMethod method, long lantency, int statusCode) {
     current++;
     RecordContainer.enqueue(new Record(startTime, method, lantency, statusCode));
     if (max == current) {
-      StatusListener.completePhrase();
+      StatusListener.completePhase();
     }
     double percentage = current * 100.0 / max;
     if (percentage >= 10 && percentage % 10 == 0){
-      logger.info(phraseEnum.toString() + " " + percentage + "% completed");
+      logger.info(phaseEnum.toString() + " " + percentage + "% completed");
     }
     if (lock == null) return;
     if (percentage >= 10) {
