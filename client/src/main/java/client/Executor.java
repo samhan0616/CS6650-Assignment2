@@ -1,7 +1,5 @@
 package client;
 
-import client.jobs.Counter;
-import client.jobs.PhaseLock;
 import client.jobs.SkierWorker;
 import client.jobs.StatusListener;
 import constant.PhaseEnum;
@@ -23,6 +21,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.concurrent.CountDownLatch;
 
 
 public class Executor {
@@ -61,14 +60,31 @@ public class Executor {
     recording();
     StatusListener.start = System.currentTimeMillis();
     // phase 1
-    doPhase(PhaseEnum.phase1, null,
-            PhaseLock.phase2Lock, PHASE1_RUNNER_FACTOR, PHASE1_THREAD_FACTOR, PHASE1_TIME_FROM, PHASE1_TIME_TO);
+    CountDownLatch phase1CD = new CountDownLatch((int)Math.ceil(ExecutorContext.numThreads * PHASE1_RUNNER_FACTOR / PHASE1_THREAD_FACTOR));
+    doPhase(PhaseEnum.phase1, phase1CD, PHASE1_RUNNER_FACTOR, PHASE1_THREAD_FACTOR, PHASE1_TIME_FROM, PHASE1_TIME_TO);
+    try {
+      phase1CD.await();
+    } catch (InterruptedException e) {
+      logger.error("phase 1 cd error");
+    }
     //phase 2
-    doPhase(PhaseEnum.phase2, PhaseLock.phase2Lock,
-            PhaseLock.phase3Lock, PHASE2_RUNNER_FACTOR, PHASE2_THREAD_FACTOR, PHASE2_TIME_FROM, PHASE2_TIME_TO);
+    CountDownLatch phase2CD = new CountDownLatch((int)Math.ceil(ExecutorContext.numThreads * PHASE2_RUNNER_FACTOR / PHASE2_THREAD_FACTOR));
+    doPhase(PhaseEnum.phase2, phase2CD, PHASE2_RUNNER_FACTOR, PHASE2_THREAD_FACTOR, PHASE2_TIME_FROM, PHASE2_TIME_TO);
+    try {
+      phase2CD.await();
+    } catch (InterruptedException e) {
+      logger.error("phase 2 cd error");
+    }
     //phase 3
-    doPhase(PhaseEnum.phase3, PhaseLock.phase3Lock,
-            null, PHASE3_RUNNER_FACTOR, PHASE3_THREAD_FACTOR, PHASE3_TIME_FROM,  PHASE3_TIME_TO);
+    CountDownLatch phase3CD = new CountDownLatch((int)Math.ceil(ExecutorContext.numThreads * PHASE3_RUNNER_FACTOR / PHASE3_THREAD_FACTOR));
+    doPhase(PhaseEnum.phase3, phase3CD, PHASE3_RUNNER_FACTOR, PHASE3_THREAD_FACTOR, PHASE3_TIME_FROM,  PHASE3_TIME_TO);
+    try {
+      phase3CD.await();
+    } catch (InterruptedException e) {
+      logger.error("phase 3 cd error");
+    }
+    System.out.println("finished");
+    StatusListener.completePhase();
   }
 
   private void recording() {
@@ -86,21 +102,12 @@ public class Executor {
 
   }
 
-  private void doPhase(PhaseEnum phaseEnum, final Object curr, Object next,
-                        double runnerFactor, int threadFactor, int timeFrom, int timeTo) {
-    if (curr != null) {
-      synchronized (curr){
-        try {
-          curr.wait();
-        } catch (InterruptedException e) {
-          logger.error("Failed to grab the lock for " + phaseEnum);
-        }
-      }
-    }
+  private void doPhase(PhaseEnum phaseEnum, CountDownLatch countDownLatch, double runnerFactor, int threadFactor, int timeFrom, int timeTo) {
+
     int maxThread = ExecutorContext.numThreads / threadFactor;
     int totalRequests = (int)(ExecutorContext.numRuns * runnerFactor * ExecutorContext.numSkiers);
-    Counter counter = new Counter(phaseEnum, next, totalRequests);
-    SkierWorker skierWorker = new SkierWorker(maxThread,timeFrom, timeTo, counter);
+//    Counter counter = new Counter(phaseEnum, totalRequests);
+    SkierWorker skierWorker = new SkierWorker(phaseEnum, maxThread, totalRequests, timeFrom, timeTo, countDownLatch);
     skierWorker.run();
   }
 

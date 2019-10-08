@@ -13,26 +13,22 @@ public class StatusListener {
 
   private static Logger logger = LoggerFactory.getLogger(StatusListener.class);
 
-
-  public static final int MAX_PHASE = 3;
-  private static int completed;
+  private static boolean completed;
   public static long start;
 
   static {
-    completed = 0;
+    completed = false;
   }
 
   public static void completePhase(){
-    completed++;
-    if (completed == MAX_PHASE) {
-      long end = System.currentTimeMillis();
-      StatsComputer.end = end;
-      logger.info(String.format("Wall time is %d ms", end - start));
-    }
+    completed = true;
+    long end = System.currentTimeMillis();
+    StatsComputer.end = end;
+    logger.info(String.format("Wall time is %d ms", end - start));
 
   }
 
   public static boolean isCompleted() {
-    return completed == MAX_PHASE;
+    return completed;
   }
 }

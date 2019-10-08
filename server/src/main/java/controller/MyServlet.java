@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class MyServlet extends HttpServlet {
 
+    int num;
     /**
      * need to do
      * @param req
@@ -23,8 +24,8 @@ public class MyServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // do something with uri
-        String uri = req.getRequestURI();
-        System.out.println(uri);
+        //String uri = req.getRequestURI();
+        //System.out.println(uri);
         BufferedReader br = req.getReader();
         String str = "";
         StringBuilder json = new StringBuilder();
@@ -33,9 +34,14 @@ public class MyServlet extends HttpServlet {
         }
         br.close();
         Skier skier = GsonUtil.fromJson(json.toString(), Skier.class);
-        //inc();
+        inc();
         resp.setStatus(201);
         resp.getWriter().write("OK");
+    }
+
+    synchronized void inc() {
+        num ++;
+        System.out.println(num);
     }
 
 }

@@ -9,8 +9,11 @@ import io.swagger.client.api.SkiersApi;
 import io.swagger.client.model.LiftRide;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import statistic.Record;
+import statistic.RecordContainer;
 import util.HttpUtil;
 
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
@@ -33,16 +36,16 @@ public class SkierThread implements Runnable {
   private int timeStart;
   private int timeEnd;
   private SkiersApi skiersApi;
-  private Counter counter;
+  private CountDownLatch countDownLatch;
 
-  public SkierThread(int index, int requestPerThread, int skierIDGap, int timeStart, int timeEnd, Counter counter) {
+  public SkierThread(int index, int requestPerThread, int skierIDGap, int timeStart, int timeEnd, CountDownLatch countDownLatch) {
     this.skierIDStart = index * skierIDGap + 1;
     this.skierIDEnd = (index + 1) * skierIDGap;
     this.requestPerThread = requestPerThread;
     this.timeStart = timeStart;
     this.timeEnd = timeEnd;
     this.skiersApi = HttpUtil.skiersApi(ExecutorContext.address);
-    this.counter = counter;
+    this.countDownLatch = countDownLatch;
   }
 
   /**
@@ -70,7 +73,8 @@ public class SkierThread implements Runnable {
         ApiResponse<Void> response = skiersApi.writeNewLiftRideWithHttpInfo(liftRide, RESORT_ID, SEASON_ID, DAY_ID, skierId);
         int statusCode = response.getStatusCode();
         long complete = System.currentTimeMillis();
-        counter.update(time, HttpMethod.POST, complete - start, statusCode);
+        RecordContainer.enqueue(new Record(time, HttpMethod.POST, complete - start, statusCode));
+
         if (statusCode != SUCCESS_STATUS_CODE) {
           logger.info(String.format(APIMessage.API_FAILED_LOG, statusCode));
         }
@@ -79,8 +83,8 @@ public class SkierThread implements Runnable {
         logger.error(APIMessage.ERROR_LOG);
         i--;
       }
-
     }
+    countDownLatch.countDown();
   }
 }
 
