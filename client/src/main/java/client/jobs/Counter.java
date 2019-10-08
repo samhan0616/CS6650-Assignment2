@@ -6,7 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import statistic.Record;
 import statistic.RecordContainer;
-import statistic.StatusListener;
 
 /**
  * @author create by Xiao Han 10/1/19

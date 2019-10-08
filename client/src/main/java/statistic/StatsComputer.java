@@ -28,7 +28,7 @@ public class StatsComputer {
   private int totalRequestNumber;
   private RecordDataGrapher grapher;
 
-  static long end = 0;
+  public static long end = 0;
 
   private PriorityQueue<Long> percentilePQ;
   private PriorityQueue<Long> medianPQSmall;
@@ -54,8 +54,8 @@ public class StatsComputer {
               ? medianPQLarge.peek()
               : (medianPQLarge.peek() - medianPQSmall.peek()) / 2.0;
       fileWriter.write(String.format("Median response time: %.2f ms" + System.getProperty("line.separator"), median));
-      fileWriter.write(String.format("Wall time: %d sec Throughput: %.2f" + System.getProperty("line.separator"),
-              (end - startTime) / 1000,  (double)totalRequestNumber * 1000 / (end - startTime)));
+      fileWriter.write(String.format("Wall time: %d ms Throughput: %.2f" + System.getProperty("line.separator"),
+              (end - startTime),  (double)totalRequestNumber * 1000 / (end - startTime)));
       fileWriter.write(String.format("99th percentile: %d ms" + System.getProperty("line.separator"), percentilePQ.peek()));
       fileWriter.write(String.format("Max response time: %d ms" + System.getProperty("line.separator"), maxResponseTime));
       fileWriter.flush();

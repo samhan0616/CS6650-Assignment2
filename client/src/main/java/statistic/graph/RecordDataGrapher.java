@@ -1,5 +1,6 @@
 package statistic.graph;
 
+import client.ExecutorContext;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.ChartUtilities;
@@ -40,8 +41,8 @@ public class RecordDataGrapher {
   }
 
   public void print() {
-    JFreeChart jfreechart = ChartFactory.createTimeSeriesChart("Time VS Latency", "Time", "Latency",
-            getDataSet());
+    JFreeChart jfreechart = ChartFactory.createTimeSeriesChart(ExecutorContext.numThreads + "threads: Time VS Latency",
+            "Time", "Latency(ms)", getDataSet());
     File outFile = new File(name +".png");
     try (FileOutputStream out = new FileOutputStream(outFile)) {
       ChartUtilities.writeChartAsPNG(out, jfreechart, WEIGHT, HEIGHT);

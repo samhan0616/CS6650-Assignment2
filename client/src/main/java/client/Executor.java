@@ -3,6 +3,7 @@ package client;
 import client.jobs.Counter;
 import client.jobs.PhraseLock;
 import client.jobs.SkierWorker;
+import client.jobs.StatusListener;
 import constant.PhraseEnum;
 import exception.ArgsException;
 import io.swagger.client.ApiClient;
@@ -61,6 +62,7 @@ public class Executor {
    */
   public void run() {
     recording();
+    StatusListener.start = System.currentTimeMillis();
     // phrase 1
     doPhrase(PhraseEnum.phrase1, null,
             PhraseLock.phrase2Lock, PHRASE1_RUNNER_FACTOR, PHRASE1_THREAD_FACTOR, PHRASE1_TIME_FROM, PHRASE1_TIME_TO);
@@ -73,12 +75,12 @@ public class Executor {
   }
 
   private void recording() {
-    StatsComputer computer = new StatsComputer(ExecutorContext.numRuns * ExecutorContext.numSkiers,
-            System.currentTimeMillis());
     File file = new File("record.csv");
     FileWriter csvWriter = null;
     try {
       csvWriter = new FileWriter(file);
+      StatsComputer computer = new StatsComputer(ExecutorContext.numRuns * ExecutorContext.numSkiers,
+              System.currentTimeMillis());
       new Thread(new StatsThread(csvWriter, computer)).start();
     } catch (IOException e) {
       e.printStackTrace();
