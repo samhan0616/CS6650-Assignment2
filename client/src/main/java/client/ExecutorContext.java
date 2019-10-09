@@ -6,20 +6,17 @@ import constant.message.ArgsMessage;
 import exception.ArgsException;
 
 public class ExecutorContext {
+
   public static String address;
-  public static Integer numLifts;
-  public static Integer numRuns;
+  public static Integer numLifts = 40;
+  public static Integer numRuns = 10;
   public static Integer numSkiers;
   public static Integer numThreads;
-
-  static {
-    numLifts = ArgsDefaultValue.NUM_LIFTS;
-    numRuns = ArgsDefaultValue.NUM_RUNS;
-  }
+  
 
   public static void setValue(String name, String val) {
     switch (name) {
-      case ArgsName.ADDRESS: address = "http://" + val; return;
+      case ArgsName.ADDRESS: address = val.contains("http") ? val : "http://"+ val; return;
       case ArgsName.NUM_LIFTS: numLifts = Integer.parseInt(val); return;
       case ArgsName.NUM_RUNS: numRuns = Integer.parseInt(val); return;
       case ArgsName.NUM_SKIERS: numSkiers = Integer.parseInt(val); return;

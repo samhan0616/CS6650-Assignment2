@@ -83,7 +83,6 @@ public class Executor {
     } catch (InterruptedException e) {
       logger.error("phase 3 cd error");
     }
-    System.out.println("finished");
     StatusListener.completePhase();
   }
 

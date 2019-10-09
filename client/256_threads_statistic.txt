@@ -1,5 +1,0 @@
-Mean response time: 11.88 ms
-Median response time: 8.00 ms
-Wall time: 22937 ms Throughput: 17439.07
-99th percentile: 49 ms
-Max response time: 543 ms
