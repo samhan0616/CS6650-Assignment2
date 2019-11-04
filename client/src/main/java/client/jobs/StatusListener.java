@@ -3,6 +3,7 @@ package client.jobs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import statistic.StatsComputer;
+import util.SystemClock;
 
 /**
  * @author create by Xiao Han 10/5/19
@@ -22,10 +23,9 @@ public class StatusListener {
 
   public static void completePhase(){
     completed = true;
-    long end = System.currentTimeMillis();
+    long end = SystemClock.now();
     StatsComputer.end = end;
     logger.info(String.format("Wall time is %d ms", end - start));
-
   }
 
   public static boolean isCompleted() {

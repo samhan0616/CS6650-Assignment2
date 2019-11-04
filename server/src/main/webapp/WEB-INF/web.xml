@@ -4,14 +4,24 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  
+
   <servlet>
-    <servlet-name>myServlet</servlet-name>
-    <servlet-class>controller.MyServlet</servlet-class>
+    <servlet-name>skierServlet</servlet-name>
+    <servlet-class>controller.SkierServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>statisticServlet</servlet-name>
+    <servlet-class>controller.StatisticServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>myServlet</servlet-name>
+    <servlet-name>skierServlet</servlet-name>
     <url-pattern>/skiers/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>statisticServlet</servlet-name>
+    <url-pattern>/statistics</url-pattern>
   </servlet-mapping>
 
 </web-app>

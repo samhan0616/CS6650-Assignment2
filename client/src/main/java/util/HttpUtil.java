@@ -32,8 +32,6 @@ public class HttpUtil {
   public static ApiClient apiClient(String baseUrl) {
     ApiClient apiClient = new ApiClient();
     apiClient.setBasePath(baseUrl);
-    apiClient.setConnectTimeout(10000);
-    apiClient.setReadTimeout(10000);
     return apiClient;
   }
 

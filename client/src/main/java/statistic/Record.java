@@ -1,6 +1,7 @@
 package statistic;
 
 import com.mashape.unirest.http.HttpMethod;
+import util.SystemClock;
 
 /**
  * @author create by Xiao Han 10/5/19
@@ -19,7 +20,7 @@ public class Record {
     this.method = method;
     this.latency = latency;
     this.statusCode = statusCode;
-    this.timeStamp = System.currentTimeMillis();
+    this.timeStamp = SystemClock.now();
   }
 
   public int getStart() {

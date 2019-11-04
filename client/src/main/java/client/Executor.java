@@ -6,6 +6,7 @@ import constant.PhaseEnum;
 import exception.ArgsException;
 import statistic.StatsComputer;
 import statistic.StatsThread;
+import util.SystemClock;
 import validators.AddressValidator;
 import validators.ArgsValidator;
 import validators.NumLiftsValidator;
@@ -58,30 +59,35 @@ public class Executor {
    */
   public void run() {
     recording();
-    StatusListener.start = System.currentTimeMillis();
+    StatusListener.start = SystemClock.now();
     // phase 1
-    CountDownLatch phase1CD = new CountDownLatch((int)Math.ceil(ExecutorContext.numThreads * PHASE1_RUNNER_FACTOR / PHASE1_THREAD_FACTOR));
-    doPhase(PhaseEnum.phase1, phase1CD, PHASE1_RUNNER_FACTOR, PHASE1_THREAD_FACTOR, PHASE1_TIME_FROM, PHASE1_TIME_TO);
+    CountDownLatch phase1CD = new CountDownLatch((int)Math.ceil(ExecutorContext.numThreads * 0.1 * PHASE1_RUNNER_FACTOR / PHASE1_THREAD_FACTOR));
+    CountDownLatch phase1Monitor = doPhase(PhaseEnum.phase1, phase1CD, PHASE1_RUNNER_FACTOR, PHASE1_THREAD_FACTOR, PHASE1_TIME_FROM, PHASE1_TIME_TO);
     try {
       phase1CD.await();
     } catch (InterruptedException e) {
       logger.error("phase 1 cd error");
     }
     //phase 2
-    CountDownLatch phase2CD = new CountDownLatch((int)Math.ceil(ExecutorContext.numThreads * PHASE2_RUNNER_FACTOR / PHASE2_THREAD_FACTOR));
-    doPhase(PhaseEnum.phase2, phase2CD, PHASE2_RUNNER_FACTOR, PHASE2_THREAD_FACTOR, PHASE2_TIME_FROM, PHASE2_TIME_TO);
+    CountDownLatch phase2CD = new CountDownLatch((int)Math.ceil(ExecutorContext.numThreads * 0.1 * PHASE2_RUNNER_FACTOR / PHASE2_THREAD_FACTOR));
+    CountDownLatch phase2Monitor = doPhase(PhaseEnum.phase2, phase2CD, PHASE2_RUNNER_FACTOR, PHASE2_THREAD_FACTOR, PHASE2_TIME_FROM, PHASE2_TIME_TO);
     try {
       phase2CD.await();
     } catch (InterruptedException e) {
       logger.error("phase 2 cd error");
     }
     //phase 3
-    CountDownLatch phase3CD = new CountDownLatch((int)Math.ceil(ExecutorContext.numThreads * PHASE3_RUNNER_FACTOR / PHASE3_THREAD_FACTOR));
-    doPhase(PhaseEnum.phase3, phase3CD, PHASE3_RUNNER_FACTOR, PHASE3_THREAD_FACTOR, PHASE3_TIME_FROM,  PHASE3_TIME_TO);
+    //CountDownLatch phase3CD = new CountDownLatch((int)Math.ceil(ExecutorContext.numThreads * PHASE3_RUNNER_FACTOR / PHASE3_THREAD_FACTOR));
+    CountDownLatch phase3Monitor = doPhase(PhaseEnum.phase3, null, PHASE3_RUNNER_FACTOR, PHASE3_THREAD_FACTOR, PHASE3_TIME_FROM,  PHASE3_TIME_TO);
     try {
-      phase3CD.await();
+      phase1Monitor.await();
+      logger.info("phase1 completed, time spent: " + (SystemClock.now() - StatusListener.start));
+      phase2Monitor.await();
+      logger.info("phase2 completed, time spent: " + (SystemClock.now() - StatusListener.start));
+      phase3Monitor.await();
+      logger.info("phase3 completed, time spent: " + (SystemClock.now() - StatusListener.start));
     } catch (InterruptedException e) {
-      logger.error("phase 3 cd error");
+
     }
     StatusListener.completePhase();
   }
@@ -92,7 +98,7 @@ public class Executor {
     try {
       csvWriter = new FileWriter(file);
       StatsComputer computer = new StatsComputer(ExecutorContext.numRuns * ExecutorContext.numSkiers,
-              System.currentTimeMillis());
+              SystemClock.now());
       new Thread(new StatsThread(csvWriter, computer)).start();
     } catch (IOException e) {
       e.printStackTrace();
@@ -101,13 +107,13 @@ public class Executor {
 
   }
 
-  private void doPhase(PhaseEnum phaseEnum, CountDownLatch countDownLatch, double runnerFactor, int threadFactor, int timeFrom, int timeTo) {
+  private CountDownLatch doPhase(PhaseEnum phaseEnum, CountDownLatch countDownLatch, double runnerFactor, int threadFactor, int timeFrom, int timeTo) {
 
     int maxThread = ExecutorContext.numThreads / threadFactor;
     int totalRequests = (int)(ExecutorContext.numRuns * runnerFactor * ExecutorContext.numSkiers);
 //    Counter counter = new Counter(phaseEnum, totalRequests);
     SkierWorker skierWorker = new SkierWorker(phaseEnum, maxThread, totalRequests, timeFrom, timeTo, countDownLatch);
-    skierWorker.run();
+    return skierWorker.run();
   }
 
   /**

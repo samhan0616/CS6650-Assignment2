@@ -1,5 +1,5 @@
-Mean response time: 45.70 ms
-Median response time: 43.00 ms
-Wall time: 217098 ms Throughput: 1842.49
-99th percentile: 138 ms
-Max response time: 1778 ms
+Mean response time: 36.21 ms
+Median response time: 31.00 ms
+Wall time: 210820 ms Throughput: 1897.35
+99th percentile: 58 ms
+Max response time: 361 ms

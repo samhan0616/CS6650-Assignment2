@@ -22,7 +22,7 @@ public class SkierWorker {
   private int threads;
   private int timeStart;
   private int timeEnd;
-  private CountDownLatch countDownLatch;
+  private CountDownLatch partialCD;
   private int totalThreads;
   private PhaseEnum phaseEnum;
 
@@ -31,18 +31,20 @@ public class SkierWorker {
     this.service = Executors.newFixedThreadPool(threads);
     this.timeStart = timeStart;
     this.timeEnd = timeEnd;
-    this.countDownLatch = countDownLatch;
+    this.partialCD = countDownLatch;
     this.totalThreads = totalThreads;
     this.phaseEnum = phaseEnum;
   }
 
-  public void run() {
-    logger.info(phaseEnum.toString() + " start! Max requests " + totalThreads);
+  public CountDownLatch run() {
+    logger.info(phaseEnum.toString() + " start! Max requests " + totalThreads + " threads: " + threads);
     int requestPerThread = totalThreads / threads;
     int skierIDGap = ExecutorContext.numSkiers / threads;
+    CountDownLatch taskCD = new CountDownLatch(threads);
     for (int i = 0; i < threads; i++) {
-      service.execute(new SkierThread(i, requestPerThread, skierIDGap, timeStart, timeEnd, countDownLatch));
+      service.execute(new SkierThread(i, requestPerThread, skierIDGap, timeStart, timeEnd, partialCD, phaseEnum, taskCD));
     }
     service.shutdown();
+    return taskCD;
   }
 }
