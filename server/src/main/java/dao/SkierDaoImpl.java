@@ -2,10 +2,8 @@ package dao;
 
 import entity.Skier;
 import entity.StatisPojo;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import service.middle.StatisticQueueService;
-import util.DBConnectionPoolUtil;
-import util.JDBCUitl;
+import util.HikaricpUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,10 +23,10 @@ public class SkierDaoImpl implements ISkierDao {
   public void createSkierHistory(Skier skier) {
     Connection connection = null;
     try {
-      connection = DBConnectionPoolUtil.getInstance().getConnection();
+      connection = HikaricpUtils.getConnection();
     } catch (SQLException e) {
       e.printStackTrace();
-      connection = JDBCUitl.getConnection();
+      return;
     }
 
     String sql = "insert into Upic_Skier_History values(?,?,?,?,?,?)";
@@ -46,7 +44,7 @@ public class SkierDaoImpl implements ISkierDao {
     } catch (SQLException e) {
       e.printStackTrace();
     } finally {
-      DBConnectionPoolUtil.releaseAll(connection, preparedStatement, null);
+      HikaricpUtils.releaseResources(connection, preparedStatement, null);
     }
   }
 
@@ -56,11 +54,10 @@ public class SkierDaoImpl implements ISkierDao {
     if (skiers.size() == 0) return;
     Connection connection = null;
     try {
-      connection = DBConnectionPoolUtil.getInstance().getConnection();
+      connection = HikaricpUtils.getConnection();
       //connection.setAutoCommit(false);
     } catch (SQLException e) {
       e.printStackTrace();
-      connection = JDBCUitl.getConnection();
     }
 
     //String sql = "insert into Upic_Skier_History values(?,?,?,?,?,?)";
@@ -93,7 +90,7 @@ public class SkierDaoImpl implements ISkierDao {
     } catch (SQLException e) {
         e.printStackTrace();
     } finally {
-      DBConnectionPoolUtil.releaseAll(connection, statement, null);
+      HikaricpUtils.releaseResources(connection, statement, null);
     }
 
   }
@@ -102,10 +99,9 @@ public class SkierDaoImpl implements ISkierDao {
   public Integer getTotalVertical(Integer resortID, String seasonID, String dayID, Integer skierID) {
     Connection connection = null;
     try {
-      connection = DBConnectionPoolUtil.getInstance().getConnection();
+      connection = HikaricpUtils.getConnection();
     } catch (SQLException e) {
       e.printStackTrace();
-      connection = JDBCUitl.getConnection();
     }
     ResultSet resultSet = null;
     //String sql = "Select sum(liftID) as total from Upic_Skier_History where resortID = ? and seasonID = ? and dayID = ? and skierID = ?";
@@ -127,7 +123,7 @@ public class SkierDaoImpl implements ISkierDao {
     } catch (SQLException e) {
       e.printStackTrace();
     } finally {
-      DBConnectionPoolUtil.releaseAll(connection, preparedStatement, resultSet);
+      HikaricpUtils.releaseResources(connection, preparedStatement, resultSet);
     }
 
     return null;
@@ -137,10 +133,9 @@ public class SkierDaoImpl implements ISkierDao {
   public void createSkierMV(long curr, long gap) {
     Connection connection = null;
     try {
-      connection = DBConnectionPoolUtil.getInstance().getConnection();
+      connection = HikaricpUtils.getConnection();
     } catch (SQLException e) {
       e.printStackTrace();
-      connection = JDBCUitl.getConnection();
     }
       String sql = "update Upic_Skier_History_Update_Lock set version = version + 1, last_update = " + curr +
             " where last_update <= " + (curr - gap);
@@ -159,7 +154,7 @@ public class SkierDaoImpl implements ISkierDao {
     } catch (SQLException e) {
       e.printStackTrace();
     } finally {
-      DBConnectionPoolUtil.releaseAll(connection, statement, null);
+      HikaricpUtils.releaseResources(connection, statement, null);
     }
   }
 }

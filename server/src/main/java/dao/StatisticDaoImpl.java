@@ -2,9 +2,7 @@ package dao;
 
 import entity.APIStatsEndpointStats;
 import entity.StatisPojo;
-import http.Result;
-import util.DBConnectionPoolUtil;
-import util.JDBCUitl;
+import util.HikaricpUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,10 +25,9 @@ public class StatisticDaoImpl implements IStatisticDao {
   public List<APIStatsEndpointStats> getStatistic() {
     Connection connection = null;
     try {
-      connection = DBConnectionPoolUtil.getInstance().getConnection();
+      connection = HikaricpUtils.getConnection();
     } catch (SQLException e) {
       e.printStackTrace();
-      connection = JDBCUitl.getConnection();
     }
 
     List<APIStatsEndpointStats> res = new ArrayList<>();
@@ -52,7 +48,7 @@ public class StatisticDaoImpl implements IStatisticDao {
     } catch (SQLException e) {
       e.printStackTrace();
     } finally {
-      DBConnectionPoolUtil.releaseAll(connection, statement, rs);
+      HikaricpUtils.releaseResources(connection, statement, rs);
 
     }
     return res;
@@ -63,10 +59,9 @@ public class StatisticDaoImpl implements IStatisticDao {
     Connection connection = null;
     ResultSet rs = null;
     try {
-      connection = DBConnectionPoolUtil.getInstance().getConnection();
+      connection = HikaricpUtils.getConnection();
     } catch (SQLException e) {
       e.printStackTrace();
-      connection = JDBCUitl.getConnection();
     }
     HashMap<StatisPojo, long[]> statistic = new HashMap<>();
     for(StatisPojo record : StatisPojos) {
@@ -127,7 +122,7 @@ public class StatisticDaoImpl implements IStatisticDao {
         e.printStackTrace();
       }
     }
-    DBConnectionPoolUtil.releaseAll(connection, preparedStatement, rs);
+    HikaricpUtils.releaseResources(connection, preparedStatement, rs);
   }
 
 

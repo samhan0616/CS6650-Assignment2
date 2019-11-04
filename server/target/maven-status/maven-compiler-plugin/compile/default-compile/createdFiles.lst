@@ -5,7 +5,6 @@ dao/IStatisticDao.class
 service/middle/StatisticQueueService$1.class
 service/middle/SkierViewService$1.class
 controller/SkierServlet.class
-util/JDBCUitl.class
 service/middle/IQueueService.class
 http/Result.class
 entity/LiftRide.class
@@ -14,11 +13,11 @@ service/middle/SkierViewService.class
 service/ISkierService.class
 service/middle/StatisticQueueService.class
 controller/StatisticServlet.class
-util/DBConnectionPoolUtil.class
 util/GsonUtil.class
 entity/Skier.class
 entity/StatisPojo.class
 service/IStatisticService.class
+util/HikaricpUtils.class
 entity/APIStatsEndpointStats.class
 service/middle/LocalQueueService.class
 http/ApiResponse.class

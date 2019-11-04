@@ -71,6 +71,8 @@ public class SkierThread implements Runnable {
    * @see Thread#run()
    */
   public void run() {
+    logger.info("requestPerThread: " + requestPerThread);
+    long now = SystemClock.now();
     for (int i = 0; i < requestPerThread; i++) {
       LiftRide liftRide = new LiftRide();
       int time = random.nextInt(timeEnd - timeStart) + timeStart;
@@ -89,10 +91,10 @@ public class SkierThread implements Runnable {
         if (statusCode != SUCCESS_STATUS_CODE) {
           logger.info(String.format(APIMessage.API_FAILED_LOG, statusCode));
         } else if (phaseEnum == PhaseEnum.phase3) {
-          start = SystemClock.now();
-          doQuery(RESORT_ID, SEASON_ID, DAY_ID, skierId);
-          complete = SystemClock.now();
-          RecordContainer.enqueue(new Record(time, HttpMethod.POST, complete - start, statusCode));
+//          start = SystemClock.now();
+//          doQuery(RESORT_ID, SEASON_ID, DAY_ID, skierId);
+//          complete = SystemClock.now();
+//          RecordContainer.enqueue(new Record(time, HttpMethod.POST, complete - start, statusCode));
         }
 
       } catch (ApiException e) {
@@ -101,6 +103,7 @@ public class SkierThread implements Runnable {
         i--;
       }
     }
+    logger.info("one thread completed, spent: " + (SystemClock.now() - now));
     if (particalCD != null) particalCD.countDown();
     taskCD.countDown();
   }
