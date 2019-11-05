@@ -1,9 +1,9 @@
-# CS6650-Assignment1
+# CS6650-Assignment2
 
-#### My server address is: 52.53.217.5:8080
+#### My server address is: 54.186.237.217:8080
 
 Please use the format of {argumentName}={argument value} like
-```numThreads=128 numSkiers=20000 numLifts=40 numRuns=20 address=52.53.217.5:8080```
+```numThreads=128 numSkiers=20000 numLifts=40 numRuns=20 address=54.186.237.217:8080```
 
 ####Compile
 1. Use IDE to run client.Client, please add program arguments.

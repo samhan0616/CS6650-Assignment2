@@ -50,14 +50,19 @@ public class StatsComputer {
     try {
       fileWriter = new FileWriter(file);
       fileWriter.write(String.format("Mean response time: %.2f ms" + System.getProperty("line.separator"),(double)total / totalRequestNumber));
+      logger.info(String.format("Mean response time: %.2f ms",(double)total / totalRequestNumber));
       double median = medianPQLarge.size() > medianPQSmall.size()
               ? medianPQLarge.peek()
               : (medianPQLarge.peek() - medianPQSmall.peek()) / 2.0;
       fileWriter.write(String.format("Median response time: %.2f ms" + System.getProperty("line.separator"), median));
+      logger.info(String.format("Median response time: %.2f ms", median));
       fileWriter.write(String.format("Wall time: %d ms Throughput: %.2f" + System.getProperty("line.separator"),
               (end - startTime),  (double)totalRequestNumber * 1000 / (end - startTime)));
+      logger.info(String.format("Wall time: %d ms Throughput: %.2f", (end - startTime),  (double)totalRequestNumber * 1000 / (end - startTime)));
       fileWriter.write(String.format("99th percentile: %d ms" + System.getProperty("line.separator"), percentilePQ.peek()));
+      logger.info(String.format("99th percentile: %d ms", percentilePQ.peek()));
       fileWriter.write(String.format("Max response time: %d ms" + System.getProperty("line.separator"), maxResponseTime));
+      logger.info(String.format("Max response time: %d ms", maxResponseTime));
       fileWriter.flush();
       fileWriter.close();
       grapher.print();

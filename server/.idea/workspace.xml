@@ -7,34 +7,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2927a1d6-a2c3-482e-a609-a1edf5d71db5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/HikaricpUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hikaricp.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/32_Time_Series.png" beforeDir="false" afterPath="$PROJECT_DIR$/../client/32_Time_Series.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/32_threads_statistic.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../client/32_threads_statistic.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/record.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../client/record.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/client/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/client/Executor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/client/jobs/SkierThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/client/jobs/SkierThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/statistic/StatsComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/statistic/StatsComputer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/validators/AddressValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/validators/AddressValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/client/Executor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/client/Executor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/client/jobs/SkierThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/client/jobs/SkierThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/statistic/StatsComputer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/statistic/StatsComputer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/validators/AddressValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/validators/AddressValidator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/client-1.0.0-executor.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/client-1.0.0-executor.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/client-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/client-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/SkierDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/SkierDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/StatisticDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/StatisticDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/DBConnectionPoolUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/JDBCUitl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/JDBC.Properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/JDBC.Properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/SkierDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/SkierDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dao/StatisticDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dao/StatisticDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/DBConnectionPoolUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/JDBCUitl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/server.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/server.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/server/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/server/WEB-INF/classes/JDBC.Properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/server/WEB-INF/classes/dao/SkierDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/server/WEB-INF/classes/dao/SkierDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/server/WEB-INF/classes/dao/StatisticDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/server/WEB-INF/classes/dao/StatisticDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/server/WEB-INF/classes/util/DBConnectionPoolUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/server/WEB-INF/classes/util/JDBCUitl.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -214,7 +202,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/StatisticDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="-1192">
               <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
             </state>
           </provider>
@@ -476,7 +464,7 @@
     <property name="SearchEverywhereHistoryKey" value="Update&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572901558791" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572930492834" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -626,15 +614,16 @@
       <updated>1569988922949</updated>
       <workItem from="1569988925676" duration="8730000" />
       <workItem from="1570418646456" duration="4520000" />
-      <workItem from="1570559427655" duration="53056000" />
+      <workItem from="1570559427655" duration="53921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66306000" />
+    <option name="totallyTimeSpent" value="67171000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="960" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -647,7 +636,7 @@
       <window_info id="Web" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.6002304" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6002304" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39976957" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -668,7 +657,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="right" id="Maven Projects" order="5" visible="true" weight="0.32967034" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32967034" />
       <window_info anchor="right" id="Database" order="6" weight="0.32967034" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -1164,7 +1153,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/StatisticDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
+        <state relative-caret-position="-1192">
           <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
         </state>
       </provider>

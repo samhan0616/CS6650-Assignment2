@@ -81,11 +81,8 @@ public class Executor {
     CountDownLatch phase3Monitor = doPhase(PhaseEnum.phase3, null, PHASE3_RUNNER_FACTOR, PHASE3_THREAD_FACTOR, PHASE3_TIME_FROM,  PHASE3_TIME_TO);
     try {
       phase1Monitor.await();
-      logger.info("phase1 completed, time spent: " + (SystemClock.now() - StatusListener.start));
       phase2Monitor.await();
-      logger.info("phase2 completed, time spent: " + (SystemClock.now() - StatusListener.start));
       phase3Monitor.await();
-      logger.info("phase3 completed, time spent: " + (SystemClock.now() - StatusListener.start));
     } catch (InterruptedException e) {
 
     }
@@ -97,7 +94,8 @@ public class Executor {
     FileWriter csvWriter = null;
     try {
       csvWriter = new FileWriter(file);
-      StatsComputer computer = new StatsComputer(ExecutorContext.numRuns * ExecutorContext.numSkiers,
+      StatsComputer computer = new StatsComputer(
+              (int)(ExecutorContext.numRuns * ExecutorContext.numSkiers * 1.1),
               SystemClock.now());
       new Thread(new StatsThread(csvWriter, computer)).start();
     } catch (IOException e) {

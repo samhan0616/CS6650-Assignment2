@@ -24,9 +24,9 @@ public class AddressValidator extends ArgsValidator {
 
   @Override
   public void validate(String val) {
-    if (!PATTERN.matcher(val).matches()){
-      throw new ArgsException(String.format(ArgsMessage.INVALID_ARGS, this.name));
-    }
+//    if (!PATTERN.matcher(val).matches()){
+//      throw new ArgsException(String.format(ArgsMessage.INVALID_ARGS, this.name));
+//    }
   }
 
 }
