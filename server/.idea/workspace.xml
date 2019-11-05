@@ -7,22 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2927a1d6-a2c3-482e-a609-a1edf5d71db5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../client/record.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../client/record.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/client/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/client/Executor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/client/jobs/SkierThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/client/jobs/SkierThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/statistic/StatsComputer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/statistic/StatsComputer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/validators/AddressValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/validators/AddressValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/client/Executor.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/client/Executor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/client/jobs/SkierThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/client/jobs/SkierThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/statistic/StatsComputer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/statistic/StatsComputer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/validators/AddressValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/validators/AddressValidator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/client-1.0.0-executor.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/client-1.0.0-executor.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/client-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/client-1.0.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/server.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/server.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,6 +58,7 @@
         <counts>
           <entry key="Properties" value="6" />
           <entry key="class" value="18" />
+          <entry key="gitignore" value="1" />
           <entry key="java" value="104" />
           <entry key="md" value="1" />
           <entry key="pom" value="1" />
@@ -82,6 +69,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="18" />
+          <entry key="Git file" value="1" />
           <entry key="JAVA" value="104" />
           <entry key="Markdown" value="1" />
           <entry key="Properties" value="7" />
@@ -112,18 +100,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/service/SkierService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="52" column="10" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="10" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/entity/LiftRide.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -199,13 +175,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dao/StatisticDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1192">
               <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -464,7 +445,7 @@
     <property name="SearchEverywhereHistoryKey" value="Update&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572930495818" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572930647783" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -614,18 +595,18 @@
       <updated>1569988922949</updated>
       <workItem from="1569988925676" duration="8730000" />
       <workItem from="1570418646456" duration="4520000" />
-      <workItem from="1570559427655" duration="53921000" />
+      <workItem from="1570559427655" duration="53939000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67171000" />
+    <option name="totallyTimeSpent" value="67189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="960" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25579977" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -696,13 +677,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.48/mysql-connector-java-5.1.48.jar!/com/mysql/fabric/jdbc/FabricMySQLDriver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/util/Hashtable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -1157,6 +1131,9 @@
           <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
